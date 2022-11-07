@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title th:text="${title}" />
+</head>
+<body>
+<h1>Form</h1>
+<p th:text="${message}" />
+<form method="post" action="/form">
+  <input type="text" name="name" th:value="${name}" />
+  <input type="radio" name="gender" id="male" value="male">
+    <label for="male">male</label>
+  </input>
+  <input type="radio" name="gender" id="female" value="female">
+    <label for="female">female</label>
+  </input>
+  <input type="submit" value="submit" />
+  <ul th:each="user : ${userList}">
+  <li th:text="${user.name}+${user.gender}" />
+  </ul>
+</form>
+</body>
+</html>
